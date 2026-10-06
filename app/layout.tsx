@@ -3,8 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ARMSS | Innovate. Engineer. Build.',
-  description: 'Artificial Intelligence, Robotics & Mechanical Student Society.',
+  title: 'ARMSS — Buildfest 2.0 | 13–15 Oct 2026 · Innovate. Engineer. Build.',
+  description:
+    'ARMSS presents Buildfest 2.0 — a three-day Hackathon, Treasure Hunt & BGMI E-Sports fest at GNDU, Amritsar (13–15 October 2026). Register now.',
   generator: 'v0.app',
 }
 

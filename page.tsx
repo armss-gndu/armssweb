@@ -1,5 +1,5 @@
-import ArmssSite from '@/components/armss-site'
+import ArmmsSite from '@/components/armms-site'
 
 export default function Page() {
-  return <ArmssSite />
+  return <ArmmsSite />
 }

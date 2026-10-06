@@ -7,6 +7,8 @@ import {
   Check,
   Copy,
   Cpu,
+  Gamepad2,
+  MapPinned,
   Menu,
   MoveRight,
   Network,
@@ -17,6 +19,7 @@ import {
 } from 'lucide-react'
 
 const joinUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd4JSOaJXuagxt5x-fU-nzsQc2FaBTK4yFw_QftLPHgGHPEUQ/viewform?pli=1&utm_source=ig&utm_medium=social&utm_content=link_in_bio'
+const buildfestUrl = 'https://forms.gle/xDdATJ3TbiSAzNZE8'
 const principles = [
   ['01', 'INNOVATE', 'Question the obvious and explore frontier tech.'],
   ['02', 'ENGINEER', 'Convert theoretical ideas into physical systems.'],
@@ -114,6 +117,117 @@ const workshopGallery = {
   devices: { title: '7 Days 7 Electronic Devices', label: 'ELECTRONIC DEVICES', images: ['/device-esp32.png', '/device-relay.png', '/device-esp8266.png', '/device-ultrasonic.png', '/device-arduino-nano.png', '/device-lcd-controller.png', '/device-soil-moisture.png'] },
 }
 
+const bfEvents = [
+  {
+    id: 'hackathon',
+    icon: Cpu,
+    tag: 'FLAGSHIP / 3 DAYS',
+    title: 'Hackathon',
+    desc: 'From problem analysis to a working prototype — ideate, build and pitch across three structured days, with the ARMSS technical team on hand for soldering, electronics and troubleshooting.',
+    meta: [
+      ['DATES', '13–15 October'],
+      ['TEAM', '2–4 members · ₹500 / team'],
+      ['SOLO', '₹350 / participant'],
+      ['PRIZE', '₹10,000 pool + goodies'],
+      ['PERKS', 'Lunch & refreshments all 3 days'],
+    ],
+    rules: [
+      'Day 1 — problem statements issued; teams pitch solutions on the official ARMSS PPT template, judged on understanding, innovation, feasibility, methodology & clarity.',
+      'Day 2 — hands-on prototype development; teams demo their progress at the end of the day.',
+      'Day 3 — refine, test and present final working models to the judging panel.',
+      'Final judging: innovation, technical implementation, functionality, feasibility, problem-solving approach & overall execution.',
+      'Prize: ₹10,000 pool for the winning team + goodie bags & recognition.',
+      'Free lunch & refreshments all three days; ARMSS tech team available for soldering, electronics & troubleshooting.',
+    ],
+  },
+  {
+    id: 'hunt',
+    icon: MapPinned,
+    tag: 'CAMPUS WIDE',
+    title: 'Treasure Hunt',
+    desc: 'Decode a series of clues and race across campus checkpoints to reach the final destination. ARMSS crew at every point — teamwork and logic win.',
+    meta: [
+      ['DATE', '14 October · 1:30–3:30 PM'],
+      ['TEAM', '3–5 members'],
+      ['FEE', '₹70 / member'],
+      ['START', 'Reporting 1:00 PM @ UIT'],
+    ],
+    rules: [
+      'Report at UIT — the starting point — for instructions and your first clue.',
+      'Decode each clue to reach the next location; the chain continues until the final destination.',
+      'Checkpoints are spread across the entire university campus.',
+      'An ARMSS team member is stationed at every checkpoint — look for ARMSS T-shirts & official ID cards.',
+      'Volunteers ensure smooth coordination and movement of participants throughout the hunt.',
+    ],
+  },
+  {
+    id: 'esports',
+    icon: Gamepad2,
+    tag: 'E-SPORTS / BGMI',
+    title: 'BGMI Tournament',
+    desc: 'Two matches — Rondo and Erangel. Placement and kill points combine into the final standings, with rankings updated after every match.',
+    meta: [
+      ['DATES', '13–14 October · 1:15–2:00 PM'],
+      ['FEE', '₹50 / participant'],
+      ['FORMAT', '2 matches · combined scoring'],
+      ['START', 'Reporting 1:00 PM'],
+    ],
+    rules: [
+      'Match 1 — Rondo · Match 2 — Erangel.',
+      'Points: 1st place = 5 · 2nd place = 2 · each kill = +1.',
+      'Example: finish 1st in Rondo with 8 kills → 13 points, then add your Erangel total.',
+      'Scores from both matches combine into the final standings.',
+      'Updated rankings are displayed after every match so squads can track their position.',
+    ],
+  },
+]
+
+const bfSchedule: Record<string, { date: string; crew: string; rows: [string, string, string][] }> = {
+  'DAY 1': {
+    date: '13 October 2026',
+    crew: 'Hackathon — Tarun Reehal & Junaid · E-Sports — Harmanjot Singh & Rajeev Kumar · Venue: TBD',
+    rows: [
+      ['10:00–11:00', 'Hackathon teams reporting', 'HACKATHON'],
+      ['11:00–12:00', 'Inaugural ceremony', 'ALL'],
+      ['12:00–13:00', 'Issue of problem statements', 'HACKATHON'],
+      ['13:00–14:00', 'Lunch break', 'ALL'],
+      ['13:00–14:00', 'BGMI Round 1 — Rondo', 'E-SPORTS'],
+      ['14:00–15:30', 'PPT preparation (ARMSS template)', 'HACKATHON'],
+      ['15:30–17:00', 'PPT presentations — Round 1', 'HACKATHON'],
+      ['18:00–18:30', 'Round 1 evaluation via WhatsApp groups', 'HACKATHON'],
+    ],
+  },
+  'DAY 2': {
+    date: '14 October 2026',
+    crew: 'Hackathon — Tarun Reehal & Junaid · E-Sports — Harmanjot Singh & Rajeev Kumar · Treasure Hunt — Ashish Attri & Krrish Sharma · Venue: TBD',
+    rows: [
+      ['10:00–10:30', 'Hackathon teams reporting', 'HACKATHON'],
+      ['11:00–13:00', 'Prototype development', 'HACKATHON'],
+      ['13:00–14:00', 'Lunch break', 'ALL'],
+      ['13:00–14:00', 'BGMI Round 2 — Erangel', 'E-SPORTS'],
+      ['13:00–13:30', 'Treasure Hunt reporting @ UIT', 'HUNT'],
+      ['13:30–15:30', 'Treasure Hunt — campus checkpoints', 'HUNT'],
+      ['14:00–15:30', 'Prototype development (contd.)', 'HACKATHON'],
+      ['15:30–17:00', 'Progress check — Round 2', 'HACKATHON'],
+      ['18:00–18:30', 'Round 2 evaluation via WhatsApp groups', 'HACKATHON'],
+    ],
+  },
+  'DAY 3': {
+    date: '15 October 2026',
+    crew: 'Hackathon — Tarun Reehal & Junaid · Venue: TBD',
+    rows: [
+      ['10:00–10:30', 'Hackathon teams reporting', 'HACKATHON'],
+      ['11:00–13:00', 'Prototype development & refinement', 'HACKATHON'],
+      ['13:00–14:00', 'Lunch break', 'ALL'],
+      ['14:00–15:30', 'Final evaluation — judging panel', 'HACKATHON'],
+      ['15:30–17:00', 'Prize distribution', 'ALL'],
+    ],
+  },
+}
+
+const bfTrackClass = (track: string) =>
+  ({ HACKATHON: 'hack', 'E-SPORTS': 'esports', HUNT: 'hunt' }[track] ?? 'all')
+
 const domainDetails: Record<string, { description: string; tools: string; areas: string }> = {
   'ARTIFICIAL INTELLIGENCE': { description: 'Build systems that learn from data, interpret sensory feeds, and make autonomous decisions.', tools: 'Python, OpenCV, YOLO, PyTorch, Edge TPU, ONNX', areas: 'Generative AI · Autonomous Vision · Edge AI · NLP' },
   'ROBOTICS': { description: 'Design machines that sense, calculate kinematics, and move through physical environments with precision.', tools: 'ROS 2 Humble, Gazebo, LiDAR, PID Controllers, Kinematics', areas: 'Autonomous Navigation · Mechatronics · Motion Planning' },
@@ -164,6 +278,7 @@ export function Navbar() {
   const links = [
     ['About', 'about'],
     ['Domains', 'domains'],
+    ['BuildFest', 'buildfest'],
     ['Workshops', 'workshops'],
     ['TechTales', 'techtales'],
     ['Membership', 'membership'],
@@ -331,8 +446,8 @@ export function Hero() {
             <span>GNDU / AMRITSAR</span>
           </div>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href={joinUrl} target="_blank" rel="noopener noreferrer" className="button button-blue">
-              JOIN ARMSS <ArrowUpRight size={17} />
+            <a href={buildfestUrl} target="_blank" rel="noopener noreferrer" className="button button-blue">
+              REGISTER — BUILDFEST 2.0 <ArrowUpRight size={17} />
             </a>
             <a href="#about" className="button button-outline">
               EXPLORE <MoveRight size={17} />
@@ -963,7 +1078,7 @@ export function Hackathon() {
           <div className="section-heading-row">
             <div>
               <p className="section-kicker">
-                05 / HACKATHON 2024 <span />
+                05 / BUILDFEST 1.0 — ARCHIVE <span />
             </p>
             <h2 className="display-title">
               IDEAS IN
@@ -1000,6 +1115,145 @@ export function Hackathon() {
         <a href="#footer" className="text-link">
           SEE THE ARCHIVE <MoveRight size={16} />
         </a>
+      </div>
+    </section>
+  )
+}
+
+export function Buildfest() {
+  const [day, setDay] = useState('DAY 1')
+  const [openRules, setOpenRules] = useState<string | null>(null)
+  const schedule = bfSchedule[day]
+
+  return (
+    <section id="buildfest" className="section section-paper reveal-section">
+      <div className="shell">
+        <p className="section-kicker">
+          FEATURED / BUILDFEST 2.0 <span />
+        </p>
+        <div className="section-heading-row">
+          <h2 className="display-title">
+            BUILD. COMPETE.
+            <br />
+            <em>WIN.</em>
+          </h2>
+          <p className="heading-aside">
+            13–15 October 2026
+            <br />
+            GNDU · Amritsar
+          </p>
+        </div>
+        <p className="body-copy">
+          ARMSS presents Buildfest 2.0 — a three-day hardware + software fest. A flagship Hackathon, a campus-wide
+          Treasure Hunt and a BGMI E-Sports tournament, built to showcase technical skills, critical thinking and
+          team spirit.
+        </p>
+        <div className="bf-cta-row">
+          <a href={buildfestUrl} target="_blank" rel="noopener noreferrer" className="button button-blue">
+            REGISTER NOW <ArrowUpRight size={17} />
+          </a>
+          <p className="bf-note">Registrations via Google Form // Limited slots</p>
+        </div>
+        <div className="bf-stats">
+          <div className="bf-stat">
+            <b>3</b>
+            <span>Days · 13–15 Oct</span>
+          </div>
+          <div className="bf-stat">
+            <b>03</b>
+            <span>Events</span>
+          </div>
+          <div className="bf-stat">
+            <b>₹10K</b>
+            <span>Prize pool</span>
+          </div>
+          <div className="bf-stat">
+            <b>₹500</b>
+            <span>Team entry · 2–4</span>
+          </div>
+        </div>
+        <div className="bf-grid">
+          {bfEvents.map((ev) => {
+            const Icon = ev.icon
+            return (
+              <article className="bf-card" key={ev.id}>
+                <span className="tech-corner-plus tech-corner-tr">+</span>
+                <div className="bf-card-top">
+                  <span className="bf-tag">{ev.tag}</span>
+                  <Icon className="bf-icon" size={22} strokeWidth={1.5} />
+                </div>
+                <h3>{ev.title}</h3>
+                <p className="bf-desc">{ev.desc}</p>
+                <button
+                  type="button"
+                  className="bf-toggle"
+                  aria-expanded={openRules === ev.id}
+                  onClick={() => setOpenRules(openRules === ev.id ? null : ev.id)}
+                >
+                  {openRules === ev.id ? 'HIDE RULES −' : 'VIEW FULL RULES +'}
+                </button>
+                {openRules === ev.id && (
+                  <ul className="bf-rules">
+                    {ev.rules.map((rule) => (
+                      <li key={rule}>{rule}</li>
+                    ))}
+                  </ul>
+                )}
+                <div className="bf-meta">
+                  {ev.meta.map(([k, v]) => (
+                    <p key={k}>
+                      <b>{k}</b> {v}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            )
+          })}
+        </div>
+        <div className="bf-schedule">
+          <div className="section-heading-row">
+            <h3 className="display-title bf-schedule-title">
+              DAY-WISE
+              <br />
+              <em>SCHEDULE.</em>
+            </h3>
+            <div className="bf-tabs" role="tablist" aria-label="Buildfest schedule days">
+              {Object.keys(bfSchedule).map((d) => (
+                <button
+                  key={d}
+                  role="tab"
+                  aria-selected={day === d}
+                  className={`bf-tab ${day === d ? 'active' : ''}`}
+                  onClick={() => setDay(d)}
+                  type="button"
+                >
+                  {d}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="bf-day-head">
+            <span>{schedule.date}</span>
+            <span>{schedule.crew}</span>
+          </div>
+          <div className="bf-rows">
+            {schedule.rows.map(([time, activity, track]) => (
+              <div className="bf-row" key={`${time}-${activity}`}>
+                <time>{time}</time>
+                <p>{activity}</p>
+                <span className={`track bf-track-${bfTrackClass(track)}`}>{track}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bf-cta-row">
+          <a href={buildfestUrl} target="_blank" rel="noopener noreferrer" className="button button-blue">
+            REGISTER YOUR TEAM <ArrowUpRight size={17} />
+          </a>
+          <a href="#footer" className="text-link">
+            QUESTIONS? REACH THE CREW <MoveRight size={16} />
+          </a>
+        </div>
       </div>
     </section>
   )
@@ -1126,6 +1380,7 @@ export function Footer() {
               <a href="#about">About</a>
               <a href="#domains">Domains</a>
               <a href="#hardware-lab">Hardware Lab</a>
+              <a href="#buildfest">BuildFest 2.0</a>
               <a href="#workshops">Workshops</a>
               <a href="#techtales">TechTales</a>
             </div>
@@ -1179,7 +1434,7 @@ export default function ArmmsSite() {
 
     // Mouse-tracking glow for domain cards
     const handleMouseMove = (e: MouseEvent) => {
-      const cards = document.querySelectorAll('.domain-card')
+      const cards = document.querySelectorAll<HTMLElement>('.domain-card')
       cards.forEach((card) => {
         const rect = card.getBoundingClientRect()
         const x = ((e.clientX - rect.left) / rect.width) * 100
@@ -1207,6 +1462,7 @@ export default function ArmmsSite() {
         <HardwareLabSection />
         <Workshops />
         <TechTales />
+        <Buildfest />
         <Hackathon />
         <Membership />
         <FAQ />
