@@ -3,9 +3,12 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'ARMSS — Buildfest 2.0 | 13–15 Oct 2026 · Innovate. Engineer. Build.',
+  title: {
+    default: 'ARMSS — AI, Robotics & Mechanical Student Society · GNDU Amritsar',
+    template: '%s',
+  },
   description:
-    'ARMSS presents Buildfest 2.0 — a three-day Hackathon, Treasure Hunt & BGMI E-Sports fest at GNDU, Amritsar (13–15 October 2026). Register now.',
+    'ARMSS — Artificial Intelligence, Robotics & Mechanical Student Society at GNDU Amritsar. Workshops, hardware lab, TechTales talks, and Buildfest 2.0 (13–15 October 2026).',
   generator: 'v0.app',
 }
 
@@ -23,7 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>

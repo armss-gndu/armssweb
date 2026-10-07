@@ -24,3 +24,58 @@
  GET / 200 in 19ms (next.js: 6ms, application-code: 13ms)
  GET / 200 in 111ms (next.js: 29ms, application-code: 82ms)
  GET / 200 in 47ms (next.js: 6ms, application-code: 41ms)
+✓ Compiled in 154ms
+ GET / 200 in 41ms (next.js: 21ms, application-code: 19ms)
+ GET / 200 in 78ms (next.js: 12ms, application-code: 66ms)
+✓ Compiled in 136ms
+ GET / 200 in 98ms (next.js: 37ms, application-code: 62ms)
+✓ Compiled in 171ms
+✓ Compiled in 215ms
+⚠ Fast Refresh had to perform a full reload when ./components/armms-site.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 200 in 82ms (next.js: 46ms, application-code: 36ms)
+⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+    at ignore-listed frames {
+  digest: '3754987824'
+}
+ GET / 500 in 315ms (next.js: 1.1ms, application-code: 314ms)
+[browser] Uncaught Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `Page`.
+    at Page (app/page.tsx:4:10)
+  2 |
+  3 | export default function Page() {
+> 4 |   return <ArmmsSite />
+    |          ^
+  5 | }
+  6 |
+⨯ Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+    at ignore-listed frames {
+  digest: '3754987824'
+}
+ GET / 500 in 22ms (next.js: 3ms, application-code: 20ms)
+[browser] Uncaught Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.
+
+Check the render method of `Page`.
+    at Page (app/page.tsx:4:10)
+  2 |
+  3 | export default function Page() {
+> 4 |   return <ArmmsSite />
+    |          ^
+  5 | }
+  6 |
+ GET / 200 in 300ms (next.js: 106ms, application-code: 194ms)
+ GET /buildfest 200 in 239ms (next.js: 202ms, application-code: 38ms)
+ GET / 200 in 62ms (next.js: 10ms, application-code: 53ms)
+ GET /buildfest 200 in 38ms (next.js: 6ms, application-code: 32ms)
+ GET / 200 in 34ms (next.js: 3ms, application-code: 31ms)
+ GET /buildfest 200 in 27ms (next.js: 2ms, application-code: 24ms)
+ GET / 200 in 28ms (next.js: 4ms, application-code: 25ms)
+✓ Compiled in 157ms
+ GET / 200 in 31ms (next.js: 4ms, application-code: 26ms)
+ GET /buildfest 200 in 33ms (next.js: 4ms, application-code: 29ms)
+ GET / 200 in 49ms (next.js: 10ms, application-code: 39ms)
+ GET /buildfest 200 in 31ms (next.js: 5ms, application-code: 26ms)
+ GET / 200 in 40ms (next.js: 4ms, application-code: 36ms)
+ GET /buildfest 200 in 25ms (next.js: 3ms, application-code: 22ms)
+ GET / 200 in 27ms (next.js: 1.8ms, application-code: 25ms)
+ GET /buildfest 200 in 29ms (next.js: 1.7ms, application-code: 27ms)
